@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package agendamento;
+
+service AgendaService {
+  rpc CriarAgendamento (AgendamentoRequest) returns (AgendamentoResponse);
+}
+
+message AgendamentoRequest {
+  string usuario_id = 1;
+  string medico_id = 2;
+  string data_hora = 3;
+  string especialidade = 4;
+}
+
+message AgendamentoResponse {
+  bool sucesso = 1;
+  string agendamento_id = 2;
+  string mensagem = 3;
+}
